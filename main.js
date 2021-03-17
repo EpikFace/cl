@@ -13,10 +13,11 @@ clickerButton.addEventListener('click', function() {
     updatePoints();
 })
 shopButton.addEventListener("click", function() {
-    if (pointCount >= 100) {
+    if (pointCount >= 100 && shopButtonArray.includes("shopButtonNumberOne") === false) {
         multiplier = multiplier * 2;
         pointCount -= 100;
         document.getElementById("shopButtonOneText").innerHTML = `(2X) Purchased!`
+        shopButtonArrayInput("shopButtonNumberTwo");
         updatePoints();
     };
 })
