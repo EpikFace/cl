@@ -6,17 +6,17 @@
     <title> Clicker Game </title>
 </head>
 <body>
-    <div>
+    <div id="mainDiv">
         <h1 id="points"> 0 </h1>
         <div>
             <input type="button" id="buto"> click me!!!1<br>
             <br>
+            <h4>points per click</h4>
+            <h3 id="pointsPerClick">1</h3>
             <br>
             <h1> Buy multipliers here!</h1>
-            <input type="button" id="shopButtonOne">
-            <h3 id="shopButtonOneText">(2X) 100 points required!</h3>
-            <input type="button" id="shopButtonTwo">
-            <h3 id="shopButtonTwoText">(2X) 200 points required!</h3>
+            <input type="button" id="shopButtonOne" value="(2X) 100 points required!" onclick="disappear('shopButtonOne',100)"><br>
+            <input type="button" id="shopButtonTwo" value="(2X) 200 points required!" onclick="disappear('shopButtonTwo',200)">
         </div>
     </div>
 <script src="main.js" charset="utf-8"></script>
