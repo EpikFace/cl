@@ -17,7 +17,7 @@ shopButton.addEventListener("click", function() {
         multiplier = multiplier * 2;
         pointCount -= 100;
         document.getElementById("shopButtonOneText").innerHTML = `(2X) Purchased!`
-        shopButtonArrayInput("shopButtonNumberTwo");
+        shopButtonArrayInput("shopButtonNumberOne");
         updatePoints();
     };
 })
