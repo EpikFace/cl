@@ -3,16 +3,32 @@ let points = document.getElementById("points");
 let updatePoints = () => {points.innerHTML = pointCount};
 let pointsPerClick = document.getElementById("pointsPerClick");
 let clickValue = 1;
-let multiplier = 1;
-let updateMulti = () => {pointsPerClick.innerHTML = clickValue * multiplier}
+let prestigeMulti = 1;
+let multiplier = 1 * prestigeMulti;
+let updateMulti = () => {multiplier = multiplier * prestigeMulti; pointsPerClick.innerHTML = clickValue * multiplier;}
+let PP = document.getElementById('PP');
+let PPCount = document.getElementById("PPCount");
+let updatePP = () => {PP.innerHTML = prestigePointCount}
+let prestigePointCount = 0;
 let clickerButton = document.getElementById("buto");
 let shopButtonArray = [];
 let shopButtonArrayInput = para => shopButtonArray.push(para);
 let shopButton = document.getElementById("shopButtonOne");
 let disappear = (para, cost) => {if (pointCount >= cost) {document.getElementById(para).style.display = "none"}};
+let pDisappear = (para, cost) => {if (prestigePointCount >= cost) {document.getElementById(para).style.display = "none"}}
 let casino = document.getElementById("casinoButton");
-casino.style.display = "none";
+let rebirthButton = document.getElementById("rebirthButton")
+let rebirthDiv = document.getElementById("rebirthDiv")
+let shopDiv = document.getElementById("shopDiv")
 
+function thingsThatShouldRunWhenGameStarts() {
+    rebirthDiv.style.display = "none";
+    casino.style.display = "none";
+    PPCount.style.display = "none";
+    shopDiv.style.display = "grid"
+    
+}
+thingsThatShouldRunWhenGameStarts();
 function shopClick(cost) {
     if (pointCount >= cost) {
         multiplier = multiplier * 2;
@@ -26,10 +42,9 @@ clickerButton.addEventListener('click', function() {
     updatePoints();
 })
 shopButton.addEventListener("click", function() {
-    if (pointCount >= 100 && shopButtonArray.includes("shopButtonNumberOne") === false) {
+    if (pointCount >= 100) {
         multiplier = multiplier * 2;
         pointCount -= 100;
-        shopButtonArrayInput("shopButtonNumberOne");
         updatePoints();
         updateMulti();
     };
@@ -38,7 +53,6 @@ document.getElementById("shopButtonTwo").addEventListener("click", function() {
     if (pointCount >= 200) {
         multiplier = multiplier * 2;
         pointCount -= 200;
-        shopButtonArrayInput("shopButtonNumberTwo");
         updatePoints();
         updateMulti();
     };
@@ -121,6 +135,8 @@ document.getElementById("shopButton12").addEventListener("click", function() {
         pointCount -= 204800;
         updatePoints();
         updateMulti();
+        rebirthDiv.style.display = "grid"
+        PPCount.style.display = "grid"
     };
 })
 casino.addEventListener("click", function() {
@@ -131,12 +147,24 @@ casino.addEventListener("click", function() {
         casino.style.display = "none"
     }
 })
-function bought(requiredPoints,shopButtonName, mult) {
-    if (pointCount >= requiredPoints && shopButtonArray.includes(shopButtonName) === false) {
-        pointCount -= requiredPoints;
-        multiplier = multiplier * mult
+rebirthButton.addEventListener("click", function() {
+    if (pointCount >= 1024000) {
+        pointCount = 0;
+        multiplier = 1;
+        multiplier = multiplier * prestigeMulti;
         updatePoints();
         updateMulti();
+        prestigePointCount = 1 * prestigeMulti;
+        updatePP();
+    };
+})
+document.getElementById("rebirthMulti1").addEventListener("click", function() {
+    if (prestigePointCount >= 1) {
+        prestigePointCount -= 1;
+        prestigeMulti = prestigeMulti * 2;
+        updatePP();
+        updateMulti();
+        rebirthDiv.style.display = "none"
+        document.getElementById("mainDiv").style = "display:grid"; 
     }
-}
-
+})
