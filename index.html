@@ -8,25 +8,37 @@
 <body>
     <div id="mainDiv">
         <h1 id="points"> 0 </h1>
-        <div>
+        <div id="subDiv">
             <input type="button" id="buto" value="click me!!!1"><br>
             <br>
             <h4>points per click</h4>
             <h3 id="pointsPerClick">1</h3>
+            <div id="PPCount">
+                <br>
+                <h4>PP</h4>
+                <h3 id="PP">0</h3>
+            </div>
             <br>
             <h1> Buy multipliers here!</h1>
-            <input type="button" id="shopButtonOne" value="(2X) 100 points required!" onclick="disappear('shopButtonOne',100)">
-            <input type="button" id="shopButtonTwo" value="(2X) 200 points required!" onclick="disappear('shopButtonTwo',200)">
-            <input type="button" id="shopButton3" value="(2X) 400 points required!" onclick="disappear('shopButton3',400)">
-            <input type="button" id="shopButton4" value="(2X) 800 points required!" onclick="disappear('shopButton4',800)">
-            <input type="button" id="shopButton5" value="(2X) 1600 points required!" onclick="disappear('shopButton5',1600)">
-            <input type="button" id="shopButton6" value="(2X) 3200 points required!" onclick="disappear('shopButton6',3200)">
-            <input type="button" id="shopButton7" value="(2X) 6400 points required!" onclick="disappear('shopButton7',6400)">
-            <input type="button" id="shopButton8" value="(2X) 12800 points required!" onclick="disappear('shopButton8',12800)">
-            <input type="button" id="shopButton9" value="(2X) 25600 points required!" onclick="disappear('shopButton9',25600)">
-            <input type="button" id="shopButton10" value="(2X) 51200 points required!" onclick="disappear('shopButton10',51200)">
-            <input type="button" id="shopButton11" value="(2X) 102400 points required!" onclick="disappear('shopButton11',102400)">
-            <input type="button" id="shopButton12" value="(2X) 204800 points required!" onclick="disappear('shopButton12',204800)">
+            <div id="shopDiv">
+                <button id="shopButtonOne" onclick="disappear('shopButtonOne', 100)">(2X) 100 points required!</button>
+                <input type="button" id="shopButtonTwo" value="(2X) 200 points required!" onclick="disappear('shopButtonTwo', 200)">
+                <input type="button" id="shopButton3" value="(2X) 400 points required!" onclick="disappear('shopButton3', 400)">
+                <input type="button" id="shopButton4" value="(2X) 800 points required!" onclick="disappear('shopButton4', 800)">
+                <input type="button" id="shopButton5" value="(2X) 1600 points required!" onclick="disappear('shopButton5', 1600)">
+                <input type="button" id="shopButton6" value="(2X) 3200 points required!" onclick="disappear('shopButton6', 3200)">
+                <input type="button" id="shopButton7" value="(2X) 6400 points required!" onclick="disappear('shopButton7', 6400)">
+                <input type="button" id="shopButton8" value="(2X) 12800 points required!" onclick="disappear('shopButton8', 12800)">
+                <input type="button" id="shopButton9" value="(2X) 25600 points required!" onclick="disappear('shopButton9', 25600)">
+                <input type="button" id="shopButton10" value="(2X) 51200 points required!" onclick="disappear('shopButton10', 51200)">
+                <input type="button" id="shopButton11" value="(2X) 102400 points required!" onclick="disappear('shopButton11', 102400)">
+                <input type="button" id="shopButton12" value="(2X) 204800 points required!" onclick="disappear('shopButton12', 204800)">
+            </div>
+        </div>
+        <div id="rebirthDiv">
+            <input type="button" id="rebirthButton" value="(+1 PP) 1024000 points required" onclick="disappear('rebirthButton', 1024000)">
+            <br>
+            <input type="button" id="rebirthMulti1" value="(Permanent 2X) 1PP required" onclick="pDisappear('rebirthMulti1', 1)">
         </div>
     </div>
     <div id="casinoDiv">
