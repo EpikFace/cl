@@ -26,6 +26,7 @@ function thingsThatShouldRunWhenGameStarts() {
     casino.style.display = "none";
     PPCount.style.display = "none";
     shopDiv.style.display = "grid"
+    load();
     
 }
 thingsThatShouldRunWhenGameStarts();
@@ -40,6 +41,7 @@ function shopClick(cost) {
 clickerButton.addEventListener('click', function() {
     pointCount = pointCount + (clickValue * multiplier);
     updatePoints();
+    save();
 })
 shopButton.addEventListener("click", function() {
     if (pointCount >= 100) {
@@ -168,3 +170,11 @@ document.getElementById("rebirthMulti1").addEventListener("click", function() {
         document.getElementById("mainDiv").style = "display:grid"; 
     }
 })
+
+
+function save() {
+    window.localStorage.setItem('PointCount', 'PointCount')
+}
+function load() {
+    window.localStorage.getItem('PointCount','PointCount')
+}
