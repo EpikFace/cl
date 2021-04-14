@@ -173,8 +173,8 @@ document.getElementById("rebirthMulti1").addEventListener("click", function() {
 
 
 function save() {
-    window.localStorage.setItem('PointCount', 'PointCount')
+    window.localStorage.setItem(PointCount, PointCount)
 }
 function load() {
-    window.localStorage.getItem('PointCount','PointCount')
+    window.localStorage.getItem(PointCount,PointCount)
 }
